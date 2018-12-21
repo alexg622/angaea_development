@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
@@ -191,4 +192,57 @@
 
 .show-activity-tag-title {
   margin-bottom: 5px;
+}
+
+.about-activity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.about-activity-show-title {
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.show-activity-ratings-container {
+  display: flex;
+  align-self: flex-start;
+  width: 50%;
+  justify-content: center;
+}
+
+.show-activity-rating-content {
+  margin-top: 10px;
+  text-indent: 15px;
+}
+
+.show-activity-number-ratings {
+  font-weight: bold;
+}
+
+.show-activity-ratings-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  justify-content: center;
+}
+
+.activity-show-user-rating {
+  margin-left: 10px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-spacing: normal;
+}
+
+.pad-left-username {
+  padding-left: 5px;
 }
