@@ -14,7 +14,7 @@
               <%@activity.get_average_rating.times do |num|%>
                 <div class="show-activity-star"><img width="25px" height="25px" src="https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true"/></div>
               <%end%>
-              <div class="show-activity-number-ratings"><a href="#">reviews <%=@activity.ratings.length%></a></div>
+              <div class="show-activity-number-ratings"><a href="#ratings">reviews <%=@activity.ratings.length%></a></div>
             </div>
           <%end%>
         </div>
@@ -32,5 +32,25 @@
         <div class="activity-ticket"> Purchase Ticket </div>
       </div>
     </div>
+  </div>
+  <div class="about-activity-container">
+    <div class="about-activity-show-title">About This Activity</div>
+    <div class="about-activity-content-show"><%=@activity.content%> <%=" "%> <%=@activity.additional_info%></div>
+  </div>
+  <%if @activity.ratings.any?%>
+  <%@activity.ratings.each do |rating|%>
+  <div class="show-activity-ratings-card">
+    <div class="show-activity-stars-container">
+      <%@activity.get_average_rating.times do |num|%>
+      <div class="show-activity-star"><img width="25px" height="25px" src="https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true"/></div>
+      <%end%>
+      <div class="show-activity-number-ratings">"<%=rating.comment.split(".")[0]%>"</div>
+    </div>
+    <div class="activity-show-user-rating"><%= gravatar_for rating.user, size: 25, class: "gravatar space-right"%> <div class="pad-left-username"><%=rating.user.name%></div></div>
+    <div class="show-activity-rating-content"><%=rating.comment%></div>
+  </div>
+  <%end%>
+  <%end%>
+  <div id="ratings" class="show-activity-ratings-container">
   </div>
 </div>

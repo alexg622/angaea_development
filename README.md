@@ -1,5 +1,2 @@
 # angaea_development
-# angaea_development
-# angaea_development
-# angaea_development
-# angaea_development
+<!-- https://github.com/hennyhandles/angaea.git -->
