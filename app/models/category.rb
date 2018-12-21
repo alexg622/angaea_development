@@ -2,7 +2,7 @@ class Category < ApplicationRecord
   validates :category_name, presence: true
   validates :category_name, uniqueness: true
 
-  has_many :tags
+  has_many :tags, dependent: :destroy
 
   belongs_to :user
 

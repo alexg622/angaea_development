@@ -1,6 +1,6 @@
-<div class="create-activity-form-container">
+<div class="create-login-form-container">
   <h1>Update Information</h1>
-  <form class="create-activity-form-css" action="<%= user_path(user) %>" method="post">
+  <form class="create-login-form-css" action="<%= user_path(user) %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch"/>
     <label>
@@ -33,6 +33,7 @@
       <input class="" type="password" name="user[password_confirmation]" value="">
     </label>
 
-    <input class="btn btn-primary" type="submit" value="Sign Up">
+    <input class="btn btn-primary" type="submit" value="Update Information">
   </form>
+  <%= link_to "Delete Account" , user_path(current_user), method: :delete, class: "red sign-up-button"%>
 </div>

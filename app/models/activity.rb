@@ -1,9 +1,9 @@
 class Activity < ApplicationRecord
  belongs_to :user
- has_many :ratings
- has_many :tags
+ has_many :ratings, dependent: :destroy
+ has_many :tags, dependent: :destroy
 
- has_many :activity_tickets
+ has_many :activity_tickets, dependent: :destroy
  has_many :attendees,
   through: :activity_tickets,
   source: :user

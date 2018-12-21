@@ -5,12 +5,12 @@ class User < ApplicationRecord
   before_create :create_activation_digest
   has_many :activities, dependent: :destroy
 
-  has_many :rental_tickets
+  has_many :rental_tickets, dependent: :destroy
   has_many :rented_items,
     through: :rental_tickets,
     source: :rental
 
-  has_many :activity_tickets
+  has_many :activity_tickets, dependent: :destroy
   has_many :events,
     through: :activity_tickets,
     source: :activity
@@ -18,8 +18,8 @@ class User < ApplicationRecord
 
 
   has_many :ratings
-  has_many :rental_ratings 
-  has_many :rentals
+  has_many :rental_ratings
+  has_many :rentals, dependent: :destroy
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
