@@ -11,6 +11,9 @@
             <div class="home-top-margin activity-card-user">By <%=activity.user.name%></div>
             <div class="home-top-margin home-activity-card-price">$<%=activity.cost%></div>
           </div>
+          <%if current_user == activity.user%>
+            <a class="activity-edit-link" href="<%=edit_activity_path(activity)%>">edit</a>
+          <%end%>
         </div>
       </div>
     <%end%>
