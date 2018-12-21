@@ -14,7 +14,7 @@ Rating.destroy_all
 ActivityTicket.destroy_all
 RentalTicket.destroy_all
 
-user1 = User.create(name: "Bill", email: "Bill@mail.com", password: "password")
+user1 = User.create(name: "Bill", email: "Bill@mail.com", profession: "Computer Engineer", skills: "CSS, HTML, JavaScript, Python, Ruby, React/Redux", about_me: "this is test data to put on the website in place of the about me section asdlfkjsldkj jfdslk; aflskdj fjdlksa;f lsadkjf lsdkaf jlk;asdjf sdl;akj sdafl;kj sdalkfj dsf", password: "password")
 user2 = User.create(name: "Jill", email: "Jill@mail.com", password: "password")
 user3 = User.create(name: "Joe", email: "Joe@mail.com", password: "password")
 user4 = User.create(name: "Henry", email: "Henry@mail.com", password: "password")
