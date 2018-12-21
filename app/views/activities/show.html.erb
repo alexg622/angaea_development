@@ -41,7 +41,7 @@
   <%@activity.ratings.each do |rating|%>
   <div class="show-activity-ratings-card">
     <div class="show-activity-stars-container">
-      <%@activity.get_average_rating.times do |num|%>
+      <%rating.stars.to_i.times do |num|%>
       <div class="show-activity-star"><img width="25px" height="25px" src="https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true"/></div>
       <%end%>
       <div class="show-activity-number-ratings">"<%=rating.comment.split(".")[0]%>"</div>

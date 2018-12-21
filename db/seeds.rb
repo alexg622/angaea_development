@@ -52,16 +52,16 @@ end
 
 User.all.each do |user|
  user.activities.each do |activity|
-   4.times do
-     Rating.create(user_id: user.id, activity_id: activity.id, stars: (1+rand(5)), comment: Faker::ChuckNorris.fact)
+   5.times do |i|
+     Rating.create(user_id: user.id, activity_id: activity.id, stars: (i+1), comment: Faker::ChuckNorris.fact)
    end
  end
 end
 
 User.all.each do |user|
   user.rentals.each do |rental|
-    4.times do
-      RentalRating.create(user_id: user.id, rental_id: rental.id, stars: (1+rand(5)), comment: Faker::ChuckNorris.fact)
+    5.times do |i|
+      RentalRating.create(user_id: user.id, rental_id: rental.id, stars: (i+1), comment: Faker::ChuckNorris.fact)
     end
   end
 end
