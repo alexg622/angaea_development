@@ -13,8 +13,8 @@ class CreateRentals < ActiveRecord::Migration[5.2]
       t.string :state, null: false
       t.string :city, null: false
       t.string :zipcode, null: false
-      t.datetime :start_date
-      t.datetime :end_date
+      t.datetime :start_date, null: false
+      t.datetime :end_date, null: false 
       t.integer :user_id
 
       t.timestamps

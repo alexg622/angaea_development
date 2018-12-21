@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # root 'static_pages#activities'  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/activities', to: 'static_pages#activities'
   root 'static_pages#home'
-  get '/rentals' , to: 'static_pages#rentals'
   get '/bookings' , to: 'static_pages#bookings'
   get '/dashboard' , to: 'static_pages#dashboard'
   get '/portfolio' , to: 'static_pages#portfolio'
@@ -21,6 +20,6 @@ Rails.application.routes.draw do
 resources :users
 resources :account_activations, only: [:edit]
 resources :categories, only: [:show]
-resources :rentals, only: [:create, :edit, :update, :destroy, :show]
+resources :rentals, only: [:create, :edit, :update, :index, :destroy, :show]
 resources :activities, only: [:new, :show, :edit, :update, :create, :destroy]
 end

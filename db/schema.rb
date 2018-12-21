@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_070207) do
+ActiveRecord::Schema.define(version: 2018_12_21_065525) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2018_12_20_070207) do
     t.string "capacity", null: false
     t.string "contact_number"
     t.string "contact_email", null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at"
@@ -64,6 +64,17 @@ ActiveRecord::Schema.define(version: 2018_12_20_070207) do
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
+  create_table "rental_ratings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "rental_id"
+    t.string "stars"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rental_id"], name: "index_rental_ratings_on_rental_id"
+    t.index ["user_id"], name: "index_rental_ratings_on_user_id"
+  end
+
   create_table "rental_tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "rental_id"
     t.integer "user_id"
@@ -86,8 +97,8 @@ ActiveRecord::Schema.define(version: 2018_12_20_070207) do
     t.string "state", null: false
     t.string "city", null: false
     t.string "zipcode", null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

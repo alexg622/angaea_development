@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
 
   has_many :ratings
+  has_many :rental_ratings 
   has_many :rentals
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }

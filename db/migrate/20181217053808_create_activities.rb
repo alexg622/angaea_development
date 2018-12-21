@@ -14,11 +14,11 @@ class CreateActivities < ActiveRecord::Migration[5.2]
      t.string :state, null: false
      t.string :zip, null: false
      t.string :picture
-     t.string :capacity, null: false 
+     t.string :capacity, null: false
      t.string :contact_number
      t.string :contact_email, null: false
-     t.datetime :start_date
-     t.datetime :end_date
+     t.datetime :start_date, null: false
+     t.datetime :end_date, null: false 
 
 
      t.timestamps
