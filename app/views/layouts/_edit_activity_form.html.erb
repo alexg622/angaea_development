@@ -1,5 +1,5 @@
-<div class="create-activity-form-container">
-  <h1>Create Your Activity</h1>
+<div class="edit-activity-form-container">
+  <h1>Update Your Activity</h1>
   <form class="create-activity-form-css" action="<%= activity_path(activity) %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch">
@@ -78,6 +78,8 @@
       <input class="" type="file" name="activity[picture]" value="<%=activity.picture%>">
     </label>
 
-    <input class="btn btn-primary" type="submit" value="Update Activity">
+    <input class="btn btn-primary" type="submit" value="Update Your Activity">
   </form>
+  <%= link_to "Delete Activity" , activity_path(activity), method: :delete, class: "red sign-up-button"%>
+
 </div>

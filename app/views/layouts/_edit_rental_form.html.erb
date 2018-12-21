@@ -1,5 +1,5 @@
-<div class="create-activity-form-container">
-  <h1>Create Your Rental</h1>
+<div class="edit-rental-form-container">
+  <h1>Update Your Rental</h1>
   <form class="create-activity-form-css" action="<%= rental_path(rental) %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch">
@@ -50,7 +50,7 @@
     </label>
 
     <label>
-      <div style="display:flex"><div>Sstate</div><div style="color:red"> *</div></div>
+      <div style="display:flex"><div>State</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="rental[state]" value="<%=rental.state%>">
     </label>
 
@@ -71,4 +71,5 @@
 
     <input class="btn btn-primary" type="submit" value="Create Rental">
   </form>
+  <%= link_to "Delete Rental" , rental_path(rental), method: :delete, class: "red sign-up-button"%>
 </div>
