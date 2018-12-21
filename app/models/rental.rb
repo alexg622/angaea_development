@@ -34,7 +34,7 @@ class Rental < ApplicationRecord
   def get_average_rating
     average = 0
     if self.rental_ratings.any?
-      self.rental_ratings.each {|rating| average += rating.stars}
+      self.rental_ratings.each {|rating| average += rating.stars.to_i}
       return (average/self.rental_ratings.length).round
     end
     return 0

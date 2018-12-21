@@ -25,6 +25,12 @@ test_rental3 = Rental.create(contact_email: "test@mail.com", cost: 55, rental_na
 # test_rental.owner = user3
 # test_rental.renter = user2
 
+10.times do
+  User.all.each do |user|
+    Rental.create(contact_email: Faker::Internet.email, cost: 55, rental_name: Faker::Name.name, city: "SF", addressLN1: "131 this street", state: "CA", zipcode: "94132", user_id: user.id, start_date: user.created_at, end_date: user.created_at, description: Faker::Lorem.paragraph(2))
+  end
+end
+
 10.times do |counter|
  name = Faker::HarryPotter.character
  User.create!(name: name, skills: Faker::ChuckNorris.fact, profession: Faker::Job.title, email: (name.split(" ")[0]+counter.to_s+"@mail.com"), about_me: Faker::GameOfThrones.quote, password: "password")
@@ -46,6 +52,16 @@ end
 
 User.all.each do |user|
  user.activities.each do |activity|
-   Rating.create(user_id: user.id, activity_id: activity.id, stars: (1+rand(5)), comment: Faker::ChuckNorris.fact)
+   4.times do
+     Rating.create(user_id: user.id, activity_id: activity.id, stars: (1+rand(5)), comment: Faker::ChuckNorris.fact)
+   end
  end
+end
+
+User.all.each do |user|
+  user.rentals.each do |rental|
+    4.times do
+      RentalRating.create(user_id: user.id, rental_id: rental.id, stars: (1+rand(5)), comment: Faker::ChuckNorris.fact)
+    end
+  end
 end
