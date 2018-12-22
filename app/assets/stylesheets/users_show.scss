@@ -41,7 +41,7 @@
 }
 
 .toggle-bar {
-  width: 800px;
+  width: 1200px;
   margin-top: 25px;
   border: 1px solid black;
   display: flex;
@@ -57,8 +57,26 @@
   transition: 0.5s;
 }
 
+.upcoming-activities-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-right: 1px solid black;
+  transition: 0.5s;
+}
+
+.rented-items-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-right: 1px solid black;
+  transition: 0.5s;
+}
+
 .create-activity-toggle {
-  border-left: 1px solid black;
+  // border-left: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,6 +94,16 @@
 }
 
 .left-toggle:hover {
+  cursor: pointer;
+  background: #A6CDDE;
+}
+
+.upcoming-activities-toggle:hover {
+  cursor: pointer;
+  background: #A6CDDE;
+}
+
+.rented-items-toggle:hover {
   cursor: pointer;
   background: #A6CDDE;
 }
@@ -102,6 +130,7 @@
 
 .right-toggle {
   display: flex;
+  border-right: 1px solid black;
   justify-content: center;
   align-items: center;
   flex: 1;
@@ -114,6 +143,15 @@
   justify-content: space-between;
   width: 90%;
   margin-top: 25px;
+}
+
+.users-upcoming-activities-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 25px;
+  display: none;
 }
 
 .activities-card-container {
@@ -161,6 +199,15 @@
 }
 
 .users-ratings-container {
+  margin-top: 25px;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: none;
+}
+
+.users-rented-items-container {
   margin-top: 25px;
   width: 90%;
   display: flex;

@@ -69,7 +69,6 @@
 
 $(document).on('turbolinks:load', () => {
   let images = document.querySelectorAll("img")
-  console.log(images);
   let imageLinks = [
     "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8ccfcc13bfcdfca6f54a8e043ffbe075&auto=format&fit=crop&w=1050&q=80",
     "https://images.unsplash.com/photo-1505842465776-3b4953ca4f44?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9389a98991d821a1ad3fd297c2a8df36&auto=format&fit=crop&w=500&q=60",
@@ -97,7 +96,7 @@ $(document).on('turbolinks:load', () => {
   for(let i=0; i<images.length; i++) {
     if(images[i].src !== "https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true" && !Array.from(images[i].classList).includes("gravatar")) {
       images[i].src = imageLinks[counter]
-      counter ++ 
+      counter ++
       if (counter > imageLinks.length) counter = 0
     }
   }
