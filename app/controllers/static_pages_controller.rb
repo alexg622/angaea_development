@@ -10,21 +10,7 @@ class StaticPagesController < ApplicationController
     @dance = Category.find_by(category_name: "dance")
   end
 
-  def activities
+  def terms_and_conditions
   end
-
-  def rentals
-  end
-
-  def bookings
-  end
-
-  def dashboard
-  end
-
-  def portfolio
-  end
-
-  def settings
-  end
+  
 end
