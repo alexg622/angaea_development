@@ -65,3 +65,15 @@ User.all.each do |user|
     end
   end
 end
+
+User.all.each do |user|
+  8.times do |i|
+    RentalTicket.create(user_id: user.id, rental_id: Rental.all[i].id)
+  end
+end
+
+User.all.each do |user|
+  8.times do |i|
+    ActivityTicket.create(user_id: user.id, activity_id: Activity.all[i].id)
+  end
+end
