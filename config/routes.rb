@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
+  post '/termsConditions', to: "static_pages#create_terms_and_conditions"
+  post '/privacyConditions', to: "static_pages#create_privacy_conditions"
   get '/termsConditions', to: 'static_pages#terms_and_conditions'
   get '/privacyConditions', to: 'static_pages#privacy_conditions'
 

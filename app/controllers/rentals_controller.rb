@@ -1,4 +1,6 @@
 class RentalsController < ApplicationController
+  before_action :agreements_signed?
+
 
   def index
     @rentals = Rental.all

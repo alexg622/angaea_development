@@ -120,6 +120,8 @@ ActiveRecord::Schema.define(version: 2018_12_21_065525) do
     t.string "password"
     t.string "profession"
     t.text "skills"
+    t.boolean "agree_to_terms"
+    t.boolean "agree_to_privacy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
