@@ -94,7 +94,7 @@ $(document).on('turbolinks:load', () => {
   ]
   let counter = 0;
   for(let i=0; i<images.length; i++) {
-    if(images[i].src !== "https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true" && !Array.from(images[i].classList).includes("gravatar") || images[i] !=== "https://media.tenor.com/images/67d055fe6c00269a3ba31e1a7fc97107/tenor.gif") {
+    if(images[i].src !== "https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true" && !Array.from(images[i].classList).includes("gravatar") && images[i].src !== "https://media.tenor.com/images/67d055fe6c00269a3ba31e1a7fc97107/tenor.gif") {
       images[i].src = imageLinks[counter]
       counter ++
       if (counter > imageLinks.length) counter = 0
