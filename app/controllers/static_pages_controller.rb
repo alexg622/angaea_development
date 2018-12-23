@@ -42,6 +42,9 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def about
+  end 
+
   private
   def user_params
     if params[:user]

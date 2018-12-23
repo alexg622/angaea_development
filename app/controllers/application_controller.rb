@@ -13,8 +13,6 @@ class ApplicationController < ActionController::Base
       else
         redirect_to "/termsConditions"
       end
-    else
-      redirect_to login_path
     end
   end
 
