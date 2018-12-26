@@ -1,6 +1,6 @@
 <div class="create-login-form-container">
   <h1>Update Information</h1>
-  <form class="create-login-form-css" action="<%= user_path(user) %>" method="post">
+  <form enctype="multipart/form-data" class="create-login-form-css" action="<%= user_path(user) %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch"/>
     <label>
@@ -21,6 +21,11 @@
     <label>
       Skills
       <input class="" type="text" name="user[skills]" value="<%=user.skills%>">
+    </label>
+
+    <label>
+      image
+      <input class="" type="file" name="user[image]" value="">
     </label>
 
     <label>

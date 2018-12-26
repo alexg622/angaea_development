@@ -13,7 +13,7 @@ class RentalsController < ApplicationController
   def create
     @rental = Rental.new(rental_params)
     @rental.user = current_user
-    if @rental.save!
+    if @rental.save
       redirect_to user_path(current_user)
     else
       redirect_to root_path
@@ -30,25 +30,25 @@ class RentalsController < ApplicationController
       @rental.image.attach(rental_params[:image])
     end
     if rental_params[:end_date] == "" && rental_params[:start_date] == ""
-      if @rental.update_attributes!(cost: rental_params[:cost], rental_name: rental_params[:rental_name], description: rental_params[:description], additional_info: rental_params[:additional_info], contact_number: rental_params[:contact_number], contact_email: rental_params[:contact_email], addressLN2: rental_params[:addressLN2], addressLN1: rental_params[:addressLN1], state: rental_params[:state], city: rental_params[:city], zipcode: rental_params[:zipcode], start_date: @rental.start_date, end_date: @rental.end_date) && @rental.image.attached?
+      if @rental.update_attributes(cost: rental_params[:cost], rental_name: rental_params[:rental_name], description: rental_params[:description], additional_info: rental_params[:additional_info], contact_number: rental_params[:contact_number], contact_email: rental_params[:contact_email], addressLN2: rental_params[:addressLN2], addressLN1: rental_params[:addressLN1], state: rental_params[:state], city: rental_params[:city], zipcode: rental_params[:zipcode], start_date: @rental.start_date, end_date: @rental.end_date) && @rental.image.attached?
         redirect_to user_path(current_user)
       else
         redirect_to root_path
       end
     elsif rental_params[:end_date] == ""
-      if @rental.update_attributes!(cost: rental_params[:cost], rental_name: rental_params[:rental_name], description: rental_params[:description], additional_info: rental_params[:additional_info], contact_number: rental_params[:contact_number], contact_email: rental_params[:contact_email], addressLN2: rental_params[:addressLN2], addressLN1: rental_params[:addressLN1], state: rental_params[:state], city: rental_params[:city], zipcode: rental_params[:zipcode], start_date: rental_params[:start_date], end_date: @rental.end_date) && @rental.image.attached?
+      if @rental.update_attributes(cost: rental_params[:cost], rental_name: rental_params[:rental_name], description: rental_params[:description], additional_info: rental_params[:additional_info], contact_number: rental_params[:contact_number], contact_email: rental_params[:contact_email], addressLN2: rental_params[:addressLN2], addressLN1: rental_params[:addressLN1], state: rental_params[:state], city: rental_params[:city], zipcode: rental_params[:zipcode], start_date: rental_params[:start_date], end_date: @rental.end_date) && @rental.image.attached?
         redirect_to user_path(current_user)
       else
         redirect_to root_path
       end
     elsif rental_params[:start_date] == ""
-      if @rental.update_attributes!(cost: rental_params[:cost], rental_name: rental_params[:rental_name], description: rental_params[:description], additional_info: rental_params[:additional_info], contact_number: rental_params[:contact_number], contact_email: rental_params[:contact_email], addressLN2: rental_params[:addressLN2], addressLN1: rental_params[:addressLN1], state: rental_params[:state], city: rental_params[:city], zipcode: rental_params[:zipcode], start_date: @rental.start_date, end_date: rental_params[:end_date]) && @rental.image.attached?
+      if @rental.update_attributes(cost: rental_params[:cost], rental_name: rental_params[:rental_name], description: rental_params[:description], additional_info: rental_params[:additional_info], contact_number: rental_params[:contact_number], contact_email: rental_params[:contact_email], addressLN2: rental_params[:addressLN2], addressLN1: rental_params[:addressLN1], state: rental_params[:state], city: rental_params[:city], zipcode: rental_params[:zipcode], start_date: @rental.start_date, end_date: rental_params[:end_date]) && @rental.image.attached?
         redirect_to user_path(current_user)
       else
         redirect_to root_path
       end
     else
-      if @rental.update_attributes!(rental_params) && @rental.image.attached?
+      if @rental.update_attributes(rental_params) && @rental.image.attached?
         redirect_to user_path(current_user)
       else
         redirect_to root_path

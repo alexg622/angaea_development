@@ -43,7 +43,11 @@ class UsersController < ApplicationController
 
  def update
    @user = User.find(params[:id])
-   if @user.update_attributes(name: user_params[:name], email: user_params[:email], profession: user_params[:profession], skills: user_params[:skills]) && @user.authenticate(user_params[:password])
+   if user_params[:image]
+     @user.image.attach(user_params[:image])
+   end
+
+   if @user.image.attached? && @user.update_attributes(name: user_params[:name], email: user_params[:email], profession: user_params[:profession], skills: user_params[:skills]) && @user.authenticate(user_params[:password])
      flash[:success] = "Profile updated"
      redirect_to @user
    else
@@ -52,9 +56,7 @@ class UsersController < ApplicationController
  end
 
  def destroy
-   p "in the destroy "
   if current_user.destroy
-    p "user was destroyed"
   end
   flash[:success] = "User deleted"
   redirect_to root_path
