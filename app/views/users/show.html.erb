@@ -2,7 +2,11 @@
   <div class="users-show-title">Hi <%=@user.name%>!</div>
   <div class="portfolio-container">
     <div class="users-show-image-container">
-      <div class="users-show-image"><%= gravatar_for @user, size: 100 %></div>
+      <%if @user.image.attached?%>
+        <div class="users-show-image-div"><%= image_tag(@user.image, class: "users-show-image")%></div>
+      <%else%>
+        <div class="users-show-image-div"><%= gravatar_for @user, size: 100 %></div>
+      <%end%>
     </div>
   </div>
   <div class="toggle-bar">

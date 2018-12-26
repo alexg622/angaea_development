@@ -1,6 +1,6 @@
 <div class="display-it-none create-activity-form-container">
   <h1>Create Your Activity</h1>
-  <form class="create-activity-form-css" action="<%= activities_path %>" method="post">
+  <form enctype="multipart/form-data" class="create-activity-form-css" action="<%= activities_path %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
 
     <label>
@@ -83,8 +83,8 @@
     </label>
 
     <label>
-      Picture
-      <input class="" type="file" name="activity[picture]" value="">
+      image
+      <input class="" type="file" name="activity[image]" value="">
     </label>
 
     <input class="btn btn-primary" type="submit" value="Create Activity">

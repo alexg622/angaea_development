@@ -2,6 +2,7 @@ class Rental < ApplicationRecord
   belongs_to :user
   has_many :rental_ratings, dependent: :destroy
   has_many :rental_tickets, dependent: :destroy
+  has_one_attached :image
   has_many :renters,
     through: :rental_tickets,
     source: :user

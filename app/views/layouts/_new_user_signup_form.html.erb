@@ -1,6 +1,6 @@
 <div class="create-login-form-container">
   <h1>Sign Up</h1>
-  <form class="create-login-form-css" action="<%= users_path %>" method="post">
+  <form enctype="multipart/form-data" class="create-login-form-css" action="<%= users_path %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <label>
       Name
@@ -10,6 +10,11 @@
     <label>
       Email
       <input class="" type="email" name="user[email]" value="">
+    </label>
+
+    <label>
+      image
+      <input class="" type="file" name="user[image]" value="">
     </label>
 
     <label>

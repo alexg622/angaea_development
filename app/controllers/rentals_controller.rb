@@ -41,6 +41,6 @@ class RentalsController < ApplicationController
 
   private
   def rental_params
-    params.require(:rental).permit(:cost, :rental_name, :description, :category, :additional_info, :contact_number, :contact_email, :addresss2, :addressLN1, :state, :city, :zipcode, :start_date, :end_date)
+    params.require(:rental).permit(:cost, :image, :rental_name, :description, :category, :additional_info, :contact_number, :contact_email, :addresss2, :addressLN1, :state, :city, :zipcode, :start_date, :end_date)
   end
 end

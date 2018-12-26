@@ -2,6 +2,7 @@ class Activity < ApplicationRecord
  belongs_to :user
  has_many :ratings, dependent: :destroy
  has_many :tags, dependent: :destroy
+ has_one_attached :image
 
  has_many :activity_tickets, dependent: :destroy
  has_many :attendees,

@@ -69,6 +69,9 @@
   width: 100%;
   max-height: 220px;
   object-fit: cover;
+  border-top: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
 }
 
 .home-top-activity-card:hover {
@@ -82,7 +85,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 .home-activity-card-user:hover {

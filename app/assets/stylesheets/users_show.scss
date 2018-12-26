@@ -23,10 +23,23 @@
   margin: 5px;
 }
 .users-show-image {
-  border-radius: 50%;
   display:flex;
   justify-content: center;
   align-items: center;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.gravatar {
+  border-radius: 50%; 
+}
+
+.users-show-image-div {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100px;
+  width: 100%;
 }
 
 .users-show-info-container {

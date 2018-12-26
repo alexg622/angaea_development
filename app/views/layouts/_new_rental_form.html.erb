@@ -1,6 +1,6 @@
 <div class="display-it-none-rental create-activity-form-container">
   <h1>Create Your Rental</h1>
-  <form class="create-activity-form-css" action="<%= rentals_path %>" method="post">
+  <form enctype="multipart/form-data" class="create-activity-form-css" action="<%= rentals_path %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
 
     <label>
@@ -66,6 +66,11 @@
     <label>
       End Date
       <input class="" type="datetime-local" name="rental[end_date]" value="">
+    </label>
+
+    <label>
+      image
+      <input class="" type="file" name="rental[image]" value="">
     </label>
 
     <input class="btn btn-primary" type="submit" value="Create Rental">

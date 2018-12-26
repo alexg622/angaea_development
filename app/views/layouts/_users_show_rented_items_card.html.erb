@@ -3,7 +3,10 @@
     <%rentals.each do |rental|%>
       <%= link_to(rental) do %>
         <div class="home-activities-card-container">
-          <img class="home-top-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
+          <!-- <img class="home-top-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" /> -->
+          <%if rental.image.attached?%>
+            <%= image_tag(rental.image, class: "home-top-activity-card")%>
+          <%end%>
           <div class="home-bottom-activity-card">
             <div class="home-activity-card-name"><%=rental.format_rental_name%></div>
             <div class="home-activity-details-container">

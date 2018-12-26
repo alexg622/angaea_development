@@ -1,7 +1,10 @@
 <div class="show-activities-outer-container">
   <div class="show-activities-card-container">
     <div class="show-top-activity-card">
-      <img class="show-image-activity-card" src="http://www.pcraft.com/wp-content/uploads/2015/06/Jim-Delutes_Gondolas.jpg" />
+      <!-- <img class="show-image-activity-card" src="http://www.pcraft.com/wp-content/uploads/2015/06/Jim-Delutes_Gondolas.jpg" /> -->
+      <%if @activity.image.attached?%>
+        <%=image_tag(@activity.image, class: "show-image-activity-card")%>
+      <%end%>
       <div class="show-info-activity-card">
         <div class="show-activity-card-name"><%=@activity.format_activity_name%></div>
         <div class="show-activity-details-container">
