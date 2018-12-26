@@ -1,6 +1,6 @@
 <div class="edit-activity-form-container">
   <h1>Update Your Activity</h1>
-  <form class="create-activity-form-css" action="<%= activity_path(activity) %>" method="post">
+  <form enctype="multipart/form-data" class="create-activity-form-css" action="<%= activity_path(activity) %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch">
     <label>
@@ -64,18 +64,18 @@
     </label>
 
     <label>
-      Start Date
+      Start Date - <%=activity.format_start_date%>
       <input class="" type="datetime-local" name="activity[start_date]" value="<%=activity.start_date%>">
     </label>
 
     <label>
-      End Date
+      End Date - <%=activity.format_end_date%>
       <input class="" type="datetime-local" name="activity[end_date]" value="<%=activity.end_date%>">
     </label>
 
     <label>
-      Picture
-      <input class="" type="file" name="activity[picture]" value="<%=activity.picture%>">
+      image
+      <input class="" type="file" name="activity[image]" value="">
     </label>
 
     <input class="btn btn-primary" type="submit" value="Update Your Activity">

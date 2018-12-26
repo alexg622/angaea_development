@@ -1,6 +1,6 @@
 <div class="edit-rental-form-container">
   <h1>Update Your Rental</h1>
-  <form class="create-activity-form-css" action="<%= rental_path(rental) %>" method="post">
+  <form enctype="multipart/form-data" class="create-activity-form-css" action="<%= rental_path(rental) %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch">
 
@@ -60,13 +60,18 @@
     </label>
 
     <label>
-      Start Date
+      Start Date - <%=rental.format_start_date%>
       <input class="" type="datetime-local" name="rental[start_date]" value="<%=rental.start_date%>">
     </label>
 
     <label>
-      End Date
+      End Date - <%=rental.format_end_date%>
       <input class="" type="datetime-local" name="rental[end_date]" value="<%=rental.end_date%>">
+    </label>
+
+    <label>
+      image
+      <input class="" type="file" name="rental[image]" value="">
     </label>
 
     <input class="btn btn-primary" type="submit" value="Create Rental">

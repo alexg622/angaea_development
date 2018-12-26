@@ -26,7 +26,17 @@ class RentalsController < ApplicationController
 
   def update
     @rental = current_user.rentals.find(params[:id])
-    if @rental.update_attributes(rental_params)
+    if rental_params[:image]
+      @rental.image.attach(rental_params[:image])
+    end
+    if !rental_params[:start_date]
+      rental_params[:start_date] = @rental.start_date
+    end
+    if !rental_params[:end_date] 
+      rental_params[:end_date] = @rental.end_date
+    end
+
+    if @rental.update_attributes!(rental_params) && @rental.image.attahced?
       redirect_to user_path(current_user)
     else
       redirect_to root_path
